@@ -330,7 +330,7 @@
         if (! self.$element.attr('disabled')) {
           self.$input.removeAttr('disabled');
         }
-        self.$input.focus();
+        setTimeout(function() { self.$input.focus(); }, 1);
       }, self));
 
         if (self.options.addOnBlur && self.options.freeInput) {
@@ -381,7 +381,7 @@
             var $prevTag = $inputWrapper.prev();
             if ($input.val().length === 0 && $prevTag[0]) {
               $prevTag.before($inputWrapper);
-              $input.focus();
+              setTimeout(function() { $input.focus(); }, 1);
             }
             break;
           // RIGHT ARROW
@@ -390,7 +390,7 @@
             var $nextTag = $inputWrapper.next();
             if ($input.val().length === 0 && $nextTag[0]) {
               $nextTag.after($inputWrapper);
-              $input.focus();
+              setTimeout(function() { $input.focus(); }, 1);
             }
             break;
          default:
@@ -466,7 +466,7 @@
      * Sets focus on the tagsinput
      */
     focus: function() {
-      this.$input.focus();
+      setTimeout(function() { this.$input.focus(); }, 1);
     },
 
     /**
